@@ -1,0 +1,96 @@
+.mob-menu {
+    transform: translate(-110%);
+    transition: all .5s ease 0s;
+}
+  
+.page-transition {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    background: linear-gradient(270deg, #f06449, #ee2828);
+    transition: all .5s ease 0s;
+    transform: translate(-110%);
+}
+
+.is-menu-open .page-transition {
+    transform: translate(0);
+}
+
+.is-menu-open .mob-menu {
+    transition-delay: .1s;
+    transform: translate(0);
+}
+
+.is-menu-close .page-transition {
+    transition-delay: .1s;
+    transform: translate(-110%);
+}
+
+.is-menu-close .mob-menu {
+    transform: translate(-110%);
+}
+
+/***********Button Hover Animation**************/
+
+.btn::before, .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    transform: translateX(-110%);
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(270deg, #235aa6, #101b3b);
+    transition: all .5s ease;
+}
+
+.btn::before {
+    transition-delay: .03s;
+}
+
+.group:hover .btn::before, .group:hover .btn::after {
+    transform: translateX(140%);
+}
+
+/************* Goto Next Section Animation arrow ***********/
+.down-arrow {
+    position: absolute;
+    top: 30%;
+    flex-grow: 1;
+    height: 100%; 
+    width: 2px;
+    transition: all .25s ease-in-out;
+}
+
+.goto-next:hover .down-arrow, .down-arrow:hover {
+    top: 50%;
+    translate: 0 -50%;
+    height: 40%;
+    width: 3px;
+}
+
+.down-arrow::before, .down-arrow::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 13px;
+    width: 2px;
+    background: var(--bg-color);
+    transition: all .1s ease-in-out .20s;
+}
+
+.goto-next:hover .down-arrow::before, .down-arrow:hover::before {
+    left: -4px;
+    transform: rotate(-40deg);
+}
+
+.goto-next:hover .down-arrow::after, .down-arrow:hover::after {
+    left: 4px;
+    transform: rotate(40deg);
+}
+
+.goto-next:hover {
+    cursor: pointer;
+}

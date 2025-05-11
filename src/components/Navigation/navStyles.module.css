@@ -1,0 +1,27 @@
+/*****************************Nav-Links-Styling********************************/
+.links::after, .links::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    z-index: -1;
+}
+.links:after {
+    background-color: #f25757;
+    transition: all .25s cubic-bezier(.694, .048, .335, 1);
+}
+.links:before {
+    background-color: #235aa6;
+    transition: all .25s cubic-bezier(.694, .048, .335, 1) .15s;
+}
+
+.links:hover {
+    text-decoration: none;
+}
+
+.links:hover:before,
+.links:hover:after {
+    width: 100%;
+}
